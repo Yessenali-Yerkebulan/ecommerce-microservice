@@ -1,6 +1,6 @@
 package com.yyessenali.ecommerce.web.request;
 
-import com.yyessenali.ecommerce.domain.Address;
+import com.yyessenali.ecommerce.documents.Address;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;

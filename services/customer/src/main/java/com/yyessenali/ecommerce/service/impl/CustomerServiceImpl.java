@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.yyessenali.ecommerce.domain.Customer;
+import com.yyessenali.ecommerce.documents.Customer;
 import com.yyessenali.ecommerce.exception.CustomerNotFoundException;
 import com.yyessenali.ecommerce.repository.CustomerRepository;
 import com.yyessenali.ecommerce.service.CustomerService;

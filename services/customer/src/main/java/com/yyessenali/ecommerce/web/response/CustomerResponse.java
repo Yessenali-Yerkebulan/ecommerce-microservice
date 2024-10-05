@@ -1,6 +1,6 @@
 package com.yyessenali.ecommerce.web.response;
 
-import com.yyessenali.ecommerce.domain.Address;
+import com.yyessenali.ecommerce.documents.Address;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

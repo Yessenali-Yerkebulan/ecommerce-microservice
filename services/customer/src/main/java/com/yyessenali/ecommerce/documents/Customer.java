@@ -1,4 +1,4 @@
-package com.yyessenali.ecommerce.domain;
+package com.yyessenali.ecommerce.documents;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

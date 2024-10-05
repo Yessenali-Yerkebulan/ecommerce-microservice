@@ -2,7 +2,7 @@ package com.yyessenali.ecommerce.web.mappers;
 
 import org.springframework.stereotype.Component;
 
-import com.yyessenali.ecommerce.domain.Customer;
+import com.yyessenali.ecommerce.documents.Customer;
 import com.yyessenali.ecommerce.web.request.CustomerRequest;
 import com.yyessenali.ecommerce.web.response.CustomerResponse;
 
