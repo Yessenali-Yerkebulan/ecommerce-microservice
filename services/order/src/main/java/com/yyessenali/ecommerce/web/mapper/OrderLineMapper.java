@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import com.yyessenali.ecommerce.model.Order;
 import com.yyessenali.ecommerce.model.OrderLine;
 import com.yyessenali.ecommerce.web.request.OrderLineRequest;
+import com.yyessenali.ecommerce.web.response.OrderLineResponse;
 
 @Component
 public class OrderLineMapper {
@@ -22,4 +23,10 @@ public class OrderLineMapper {
 				.build();
 	}
 
+	public OrderLineResponse toOrderLineResponse(OrderLine orderLine) {
+		return OrderLineResponse.builder()
+				.id(orderLine.getId())
+				.quantity(orderLine.getQuantity())
+				.build();
+	}
 }
