@@ -1,15 +1,11 @@
-package com.yyessenali.ecommerce.kafka;
+package com.yyessenali.ecommerce.kafka.payment;
 
 import java.math.BigDecimal;
 
-import com.yyessenali.ecommerce.model.PaymentMethod;
-
-import lombok.Builder;
 import lombok.Data;
 
 @Data
-@Builder
-public class PaymentNotificationRequest {
+public class PaymentConfirmation {
 	private String orderReference;
 	private BigDecimal amount;
 	private PaymentMethod paymentMethod;

@@ -29,8 +29,8 @@ public class PaymentServiceImpl implements PaymentService{
 					.orderReference(request.getOrderReference())
 					.amount(request.getAmount())
 					.paymentMethod(request.getPaymentMethod())
-					.customerFirstName(request.getCustomer().getFirstname())
-					.customerLastName(request.getCustomer().getLastname())
+					.customerFirstname(request.getCustomer().getFirstname())
+					.customerLastname(request.getCustomer().getLastname())
 					.customerEmail(request.getCustomer().getEmail())
 					.build()
 		);
