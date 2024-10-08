@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.yyessenali.ecommerce.client.CustomerClient;
+import com.yyessenali.ecommerce.client.PaymentClient;
 import com.yyessenali.ecommerce.client.ProductClient;
 import com.yyessenali.ecommerce.exception.BusinessException;
 import com.yyessenali.ecommerce.kafka.OrderConfirmation;
@@ -16,6 +17,7 @@ import com.yyessenali.ecommerce.service.OrderService;
 import com.yyessenali.ecommerce.web.mapper.OrderMapper;
 import com.yyessenali.ecommerce.web.request.OrderLineRequest;
 import com.yyessenali.ecommerce.web.request.OrderRequest;
+import com.yyessenali.ecommerce.web.request.PaymentRequest;
 import com.yyessenali.ecommerce.web.request.PurchaseRequest;
 import com.yyessenali.ecommerce.web.response.OrderResponse;
 
@@ -33,6 +35,7 @@ public class OrderServiceImpl implements OrderService{
 	private final OrderMapper mapper;
 	private final OrderLineService orderLineService;
 	private final OrderProducer orderProducer;
+	private final PaymentClient paymentClient;
 	
 	@Override
 	public Long createOrder(@Valid OrderRequest request) {
@@ -53,6 +56,16 @@ public class OrderServiceImpl implements OrderService{
 					.build()
 			);
 		}
+		
+		var paymentRequest = PaymentRequest.builder()
+				.amount(request.getAmount())
+				.paymentMethod(request.getPaymentMethod())
+				.orderId(request.getId())
+				.orderReference(request.getReference())
+				.customer(customer)
+				.build();
+		
+		paymentClient.requestOrderPayment(paymentRequest);
 		
 		orderProducer.sendOrderConfirmation(
 				OrderConfirmation.builder()
