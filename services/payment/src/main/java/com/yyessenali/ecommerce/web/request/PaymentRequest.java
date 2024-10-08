@@ -4,11 +4,15 @@ import java.math.BigDecimal;
 
 import com.yyessenali.ecommerce.model.PaymentMethod;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Builder
-@Data
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class PaymentRequest {
 	private long id;
 	private BigDecimal amount;

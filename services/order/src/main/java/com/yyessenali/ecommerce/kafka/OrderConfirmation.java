@@ -7,9 +7,15 @@ import com.yyessenali.ecommerce.client.response.CustomerResponse;
 import com.yyessenali.ecommerce.client.response.PurchaseResponse;
 import com.yyessenali.ecommerce.model.PaymentMethod;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Builder
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class OrderConfirmation {
 	private String orderReference;
 	private BigDecimal totalAmount;

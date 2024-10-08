@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.yyessenali.ecommerce.web.request.PaymentRequest;
 
 @FeignClient(
-		name = "product-service",
+		name = "payment-service",
 		url = "${application.config.payment-url}"
 )
 public interface PaymentClient {

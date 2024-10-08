@@ -1,10 +1,15 @@
 package com.yyessenali.ecommerce.client.response;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-@Data
+
 @Builder
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class CustomerResponse {
 	private String id;
 	private String firstname;
